@@ -18,6 +18,8 @@ public class SinglyLinkedList {
     }
 
     showListContents(head);
+
+    System.out.println(String.format("Total nodes in the list : %d", countNodes(head)));
   }
 
   public static Node appendNode(Node head, Node node) {
@@ -60,5 +62,18 @@ public class SinglyLinkedList {
       }
       System.out.println("NULL");
     }
+  }
+
+  public static int countNodes(Node head) {
+    if (head == null) return 0;
+
+    Node temp = head;
+    int count = 1;
+
+    while (temp.next != null) {
+      count++;
+      temp = temp.next;
+    }
+    return count;
   }
 }
