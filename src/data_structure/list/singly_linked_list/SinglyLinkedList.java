@@ -20,10 +20,14 @@ public class SinglyLinkedList {
     showListContents(head);
 
     System.out.println(String.format("Total nodes in the list : %d", countNodes(head)));
+
+    head = reverseList(head);
+
+    showListContents(head);
   }
 
   public static Node appendNode(Node head, Node node) {
-    if (head == null) {
+    if (isHeadNull(head)) {
       head = node;
       node.next = null;
     } else {
@@ -40,7 +44,7 @@ public class SinglyLinkedList {
   }
 
   public static Node prependNode(Node head, Node node) {
-    if (head == null) {
+    if (isHeadNull(head)) {
       head = node;
       head.next = null;
     } else {
@@ -51,7 +55,7 @@ public class SinglyLinkedList {
   }
 
   public static void showListContents(Node head) {
-    if (head == null) {
+    if (isHeadNull(head)) {
       LOG.info("List is empty");
     } else {
       Node temp = head;
@@ -65,7 +69,7 @@ public class SinglyLinkedList {
   }
 
   public static int countNodes(Node head) {
-    if (head == null) return 0;
+    if (isHeadNull(head)) return 0;
 
     Node temp = head;
     int count = 1;
@@ -75,5 +79,30 @@ public class SinglyLinkedList {
       temp = temp.next;
     }
     return count;
+  }
+
+  public static Node reverseList(Node head) {
+
+    if (isHeadNull(head)) {
+      LOG.info("List is empty");
+      return null;
+    } else {
+
+      Node prev = null;
+      Node curr;
+      Node next = head;
+
+      while (next != null) {
+        curr = next;
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+      }
+      return prev;
+    }
+  }
+
+  private static boolean isHeadNull(Node head) {
+    return head == null;
   }
 }

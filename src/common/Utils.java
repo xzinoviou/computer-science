@@ -12,10 +12,10 @@ public class Utils {
     70, 75, 80, 82, 83, 85, 90, 95, 100
   };
 
-  public static int[] unortedIntegersMany = {
+  public static int[] unsortedIntegersMany = {
     15, 55, 49, 2, 75, 8, 20, 23, 29, 39, 43, 82, 46, 50, 51, 53, 60, 69, 5, 70, 1, 66, 59, 80, 83,
     65, 85, 90, 27, 95, 38, 11, 100, 19
   };
 
-  public static int[] unortedIntegersFew = {15, 55, 2, 75, 8, 20, 23, 100, 19, 65};
+  public static int[] unsortedIntegersFew = {15, 55, 2, 75, 8, 20, 23, 100, 19, 65};
 }
